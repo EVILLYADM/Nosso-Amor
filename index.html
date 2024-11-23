@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <h1 style="
+      color: gold; 
+      font-size: 3rem; 
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); 
+      font-family: 'Great Vibes', cursive;
+    ">
+      Nosso Amor
+    </h1>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MEU AMOR</title>
+
+<!-- Fonte do Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+  <style>
+    /* Reseta os estilos padrão */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: url('universo.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.5rem;
+      margin-top: 10px;
+    }
+
+    /* Estilo para imagens */
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 2rem;
+    }
+
+    .gallery img {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      p {
+        font-size: 1.2rem;
+      }
+
+      .gallery img {
+        max-width: 200px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h2 {
+        font-size: 1.2rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
+      .gallery img {
+        max-width: 150px;
+      }
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- Galeria de imagens -->
+  <div class="gallery">
+    <img src="foto1.jpg" alt="Foto 1">
+    <img src="foto2.jpg" alt="Foto 2">
+    <img src="foto3.jpg" alt="Foto 3">
+  </div>
+
+<!-- Contador de tempo -->
+  <div class="counter" style="margin-top: 2rem;">
+    <h2 style="
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.5rem; 
+      color: #ffffff; 
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    ">
+      Estamos juntas há:
+    </h2>
+    <p id="time-counter" style="
+      font-size: 1.5rem;
+      color: #ffffff;
+    ">
+      Carregando...
+    </p>
+  </div>
+<!-- Frase no canto esquerdo -->
+<p style="
+  position: absolute;
+  top: 140%; 
+  left: 100px; 
+  transform: translateY(-50%);
+  font-family: 'Great Vibes', cursive;
+  font-size: 2rem; 
+  color: #ffffff; 
+  text-shadow: 0 0 5px #FFD700, 0 0 10px #FFC300, 0 0 15px #FFA500; 
+  margin: 0;
+">
+  "Para você amor da minha vida."
+</p>
+
+<!-- Frase no canto direito -->
+<p style="
+  position: absolute;
+  top: 140%; 
+  right: 100px; 
+  transform: translateY(-50%);
+  font-family: 'Great Vibes', cursive;
+  font-size: 2rem; 
+  color: #ffffff; 
+  text-shadow: 0 0 5px #FFD700, 0 0 10px #FFC300, 0 0 15px #FFA500; 
+  margin: 0;
+  text-align: right;
+">
+  "Cada dia te amando mais."
+</p>
+
+
+  <!-- Playlist do Spotify -->
+  <div class="playlist" style="margin-top: 2rem;">
+    <iframe style="border-radius:12px" 
+      src="https://open.spotify.com/embed/playlist/32QegpkSzbrenURYZRjWo0?utm_source=generator" 
+      width="100%" 
+      height="380" 
+      frameBorder="0" 
+      allowfullscreen=""
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+  </div>
+
+  <script>
+    // Data de início do namoro (formato: Ano, Mês - 1, Dia)
+    const startDate = new Date(Date.UTC(2022, 7, 20, 0, 0, 0)); 
+
+    function updateTime() {
+      const now = new Date(); 
+      const diff = now - startDate;
+
+      const totalSeconds = Math.floor(diff / 1000);
+      const totalMinutes = Math.floor(totalSeconds / 60);
+      const totalHours = Math.floor(totalMinutes / 60);
+      const days = Math.floor(totalHours / 24); 
+      const hours = totalHours % 24;
+      const minutes = totalMinutes % 60; 
+      const seconds = totalSeconds % 60;
+
+      document.getElementById("time-counter").innerText =
+        `${days} dias, ${hours} horas, ${minutes} minutos e ${seconds} segundos`;
+    }
+
+    setInterval(updateTime, 1000);
+    updateTime();
+  </script>
+</body>
+</html>
+</html>
